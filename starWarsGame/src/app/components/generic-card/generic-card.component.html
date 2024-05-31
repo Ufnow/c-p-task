@@ -1,0 +1,110 @@
+<div class="generic-card">
+  <mat-card class="generic-card__card">
+    <mat-card-header class="generic-card__header">
+      <mat-card-title class="generic-card__title">{{
+        item()?.name
+      }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="generic-card__content">
+      <ng-container *ngIf="type === gameType.PEOPLE; else starshipTemplate">
+        <div class="generic-card__details">
+          <p class="generic-card__detail">
+            <span class="generic-card__label">Height:</span>
+            {{ person().height }}
+          </p>
+          <p class="generic-card__detail">
+            <span class="generic-card__label">Mass:</span> {{ person().mass }}
+          </p>
+          <p class="generic-card__detail">
+            <span class="generic-card__label">Hair Color:</span>
+            {{ person().hairColor }}
+          </p>
+          <p class="generic-card__detail">
+            <span class="generic-card__label">Skin Color:</span>
+            {{ person().skinColor }}
+          </p>
+          <p class="generic-card__detail">
+            <span class="generic-card__label">Eye Color:</span>
+            {{ person().eyeColor }}
+          </p>
+          <p class="generic-card__detail">
+            <span class="generic-card__label">Birth Year:</span>
+            {{ person().birthYear }}
+          </p>
+          <p class="generic-card__detail">
+            <span class="generic-card__label">Gender:</span>
+            {{ person().gender }}
+          </p>
+          <p class="generic-card__detail">
+            <span class="generic-card__label">Description:</span>
+            {{ person().description }}
+          </p>
+        </div>
+      </ng-container>
+      <ng-template #starshipTemplate>
+        <div class="generic-card__details">
+          <p class="generic-card__detail">
+            <span class="generic-card__label">Model:</span>
+            {{ starship()?.model }}
+          </p>
+          <p class="generic-card__detail">
+            <span class="generic-card__label">Class:</span>
+            {{ starship()?.starshipClass }}
+          </p>
+          <p class="generic-card__detail">
+            <span class="generic-card__label">Manufacturer:</span>
+            {{ starship()?.manufacturer }}
+          </p>
+          <p class="generic-card__detail">
+            <span class="generic-card__label">Cost:</span>
+            {{ starship()?.costInCredits }}
+          </p>
+          <p class="generic-card__detail">
+            <span class="generic-card__label">Length:</span>
+            {{ starship()?.length }}
+          </p>
+          <p class="generic-card__detail">
+            <span class="generic-card__label">Crew:</span>
+            {{ starship()?.crew }}
+          </p>
+          <p class="generic-card__detail">
+            <span class="generic-card__label">Passengers:</span>
+            {{ starship()?.passengers }}
+          </p>
+          <p class="generic-card__detail">
+            <span class="generic-card__label">Max Speed:</span>
+            {{ starship()?.maxAtmospheringSpeed }}
+          </p>
+          <p class="generic-card__detail">
+            <span class="generic-card__label">Hyperdrive Rating:</span>
+            {{ starship()?.hyperdriveRating }}
+          </p>
+          <p class="generic-card__detail">
+            <span class="generic-card__label">MGLT:</span>
+            {{ starship()?.MGLT }}
+          </p>
+          <p class="generic-card__detail">
+            <span class="generic-card__label">Cargo Capacity:</span>
+            {{ starship()?.cargoCapacity }}
+          </p>
+          <p class="generic-card__detail">
+            <span class="generic-card__label">Consumables:</span>
+            {{ starship()?.consumables }}
+          </p>
+          <p class="generic-card__detail">
+            <span class="generic-card__label">Created:</span>
+            {{ starship()?.created }}
+          </p>
+          <p class="generic-card__detail">
+            <span class="generic-card__label">Edited:</span>
+            {{ starship()?.edited }}
+          </p>
+          <p class="generic-card__detail">
+            <span class="generic-card__label">Description:</span>
+            {{ starship()?.description }}
+          </p>
+        </div>
+      </ng-template>
+    </mat-card-content>
+  </mat-card>
+</div>

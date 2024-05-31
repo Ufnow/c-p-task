@@ -1,0 +1,43 @@
+@import "@assets/global-variables.scss";
+
+.game-dashboard {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: $grey;
+  padding-top: 15px;
+
+  &__button-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &--button_blue {
+      background-color: $button-blue;
+    }
+
+    &--button_red {
+      background-color: $button-red;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 80%;
+    gap: 20px;
+    margin-top: 10px;
+
+    &__card {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      h2 {
+        text-align: center;
+      }
+    }
+  }
+}

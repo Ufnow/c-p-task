@@ -1,0 +1,61 @@
+<div class="game-dashboard">
+  @if(store.loading()) {
+  <app-loader></app-loader>
+  }
+
+  <div class="game-dashboard__button-bar">
+    <mat-button-toggle-group name="gameType" [(value)]="gameType">
+      <mat-button-toggle
+        mat-stroked-button
+        (click)="switchGameType(gameTypes.PEOPLE)"
+        value="people"
+        >People</mat-button-toggle
+      >
+      <mat-button-toggle
+        mat-stroked-button
+        (click)="switchGameType(gameTypes.STARSHIP)"
+        value="starship"
+        >Starships</mat-button-toggle
+      >
+    </mat-button-toggle-group>
+
+    <button mat-stroked-button color="primary" (click)="resetGame()">
+      Reset Game
+    </button>
+    <button mat-stroked-button color="primary" (click)="play()">Play</button>
+  </div>
+
+  <div class="game-result">
+    @if(store.gameResult() === gameResult.FIRST_PLAYER_WIN) {
+    <p>First Player Wins!</p>
+    } @else if(store.gameResult() === gameResult.SECOND_PLAYER_WIN) {
+    <p>Second Player Wins!</p>
+    } @else if(store.gameResult() === gameResult.DRAW) {
+    <p>It's a Draw!</p>
+    } @else {
+    <p>Click button 'Play' to draw the cards!</p>
+    }
+  </div>
+
+  <div class="game-dashboard__cards">
+    <div class="game-dashboard__cards__card">
+      <h2>Player one score: {{ store.firstPlayerScore() }}</h2>
+      @if(store.firstPlayerCard() && store.secondPlayerCard()) {
+      <app-generic-card
+        [type]="gameType"
+        [item]="store.firstPlayerCard()"
+      ></app-generic-card>
+      }
+    </div>
+
+    <div class="game-dashboard__cards__card">
+      <h2>Player two score: {{ store.secondPlayerScore() }}</h2>
+      @if(store.firstPlayerCard() && store.secondPlayerCard()) {
+      <app-generic-card
+        [type]="gameType"
+        [item]="store.secondPlayerCard()"
+      ></app-generic-card>
+      }
+    </div>
+  </div>
+</div>
